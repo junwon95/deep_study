@@ -3,12 +3,14 @@ import torch
 import torch.nn.functional as F
 from torch.nn import init
 
+
 class Linear(nn.Module):
     """
     Wrapper class of torch.nn.Linear
     Weight initialize by xavier initialization and bias initialize to zeros.
     """
-    def __init__(self, in_features, out_features, bias= True):
+
+    def __init__(self, in_features, out_features, bias=True):
         super(Linear, self).__init__()
         self.linear = nn.Linear(in_features, out_features, bias=bias)
         init.xavier_uniform_(self.linear.weight)
@@ -17,6 +19,7 @@ class Linear(nn.Module):
 
     def forward(self, x):
         return self.linear(x)
+
 
 class BNReluRNN(nn.Module):
     """
@@ -41,12 +44,12 @@ class BNReluRNN(nn.Module):
 
     def __init__(
             self,
-            input_size: int,                    # size of input
-            hidden_dim: int = 512,              # dimension of RNN`s hidden state
-            rnn_type: str = 'gru',              # type of RNN cell
-            bidirectional: bool = True,         # if True, becomes a bidirectional rnn
-            dropout_p: float = 0.1,             # dropout probability
-            device: torch.device = 'cuda'       # device - 'cuda' or 'cpu'
+            input_size: int,  # size of input
+            hidden_dim: int = 512,  # dimension of RNN`s hidden state
+            rnn_type: str = 'gru',  # type of RNN cell
+            bidirectional: bool = True,  # if True, becomes a bidirectional rnn
+            dropout_p: float = 0.1,  # dropout probability
+            device: torch.device = 'cuda'  # device - 'cuda' or 'cpu'
     ):
         super(BNReluRNN, self).__init__()
         self.num_layers = 2
@@ -67,6 +70,7 @@ class BNReluRNN(nn.Module):
         output, _ = nn.utils.rnn.pad_packed_sequence(output, total_length=total_length)
 
         return output
+
 
 class MaskConv2d(nn.Module):
     """
@@ -91,6 +95,7 @@ class MaskConv2d(nn.Module):
         - **output**: Masked output from the sequential
         - **seq_lengths**: Sequence length of output from the sequential
     """
+
     def __init__(self, sequential: nn.Sequential) -> None:
         super(MaskConv2d, self).__init__()
         self.sequential = sequential
@@ -138,6 +143,7 @@ class MaskConv2d(nn.Module):
             seq_lengths >>= 1
 
         return seq_lengths.int()
+
 
 class DeepSpeech2Extractor(nn.Module):
     """

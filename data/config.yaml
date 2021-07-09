@@ -1,7 +1,7 @@
 #train dataset
-root : C:/Users/junwonseo95/Desktop/dataset
-script_data_path: C:/Users/junwonseo95/Desktop/deep_study/data/aihub/transcripts.txt
-vocab_path: C:/Users/junwonseo95/Desktop/deep_study/data/aihub/aihub_labels.csv
+root : ./dataset
+script_data_path: deep_study/data/aihub/transcripts.txt
+vocab_path: deep_study/data/aihub/aihub_labels.csv
 
 #input feature
 feature: melspectrogram
@@ -21,7 +21,7 @@ save_every: 1
 #inference
 inference: True
 use_val_data: True
-weight_path: C:/Users/junwonseo95/Desktop/deep_study/runs/2021-07-07/pretrained.pt
+weight_path: deep_study/runs/2021-07-07/pretrained.pt
 
 #root : C:/SpeechRecognitionDataset/Dataset/AI_hub
 #script_data_path: C:/Users/junwonseo95/Desktop/deep_study/data/aihub/transcripts.txt
