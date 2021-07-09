@@ -1,6 +1,6 @@
 #train dataset
 root : ./dataset
-script_data_path: deep_study/data/aihub/transcripts.txt
+script_data_path: content/gdrive/My Drive/Google Colab/deep_study/transcripts.txt
 vocab_path: deep_study/data/aihub/aihub_labels.csv
 
 #input feature
@@ -21,7 +21,7 @@ save_every: 1
 #inference
 inference: True
 use_val_data: True
-weight_path: deep_study/runs/2021-07-07/pretrained.pt
+weight_path: content/gdrive/My Drive/Google Colab/deep_study/pretrained.pt
 
 #root : C:/SpeechRecognitionDataset/Dataset/AI_hub
 #script_data_path: C:/Users/junwonseo95/Desktop/deep_study/data/aihub/transcripts.txt
