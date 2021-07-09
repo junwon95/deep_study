@@ -87,7 +87,7 @@ if __name__ == '__main__':
     parser.add_argument('--audio_path', type=str, default='', help='audio_path')
     option = parser.parse_args()
 
-    with open('./data/config.yaml') as f:
+    with open('deep_study/data/config.yaml') as f:
         opt = yaml.load(f, Loader=yaml.FullLoader)
     if option.audio_path != '':
         opt['audio_path'] = option.audio_path
