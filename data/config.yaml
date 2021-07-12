@@ -1,5 +1,5 @@
 #train dataset
-root : ./dataset
+root : /dataset/content/gdrive/My Drive/Colab Notebooks
 script_data_path: /content/gdrive/My Drive/Colab Notebooks/deep_study/transcripts.txt
 vocab_path: deep_study/data/aihub/aihub_labels.csv
 

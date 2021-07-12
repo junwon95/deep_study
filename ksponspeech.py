@@ -1,4 +1,6 @@
 import csv
+
+
 class KsponSpeechVocabulary():
     def __init__(self, vocab_path, output_unit='character'):
         super(KsponSpeechVocabulary, self).__init__()
@@ -31,7 +33,7 @@ class KsponSpeechVocabulary():
                 if label.item() == self.eos_id:
                     break
                 elif label.item() == self.blank_id:
-                  continue
+                    continue
                 sentence += self.id_dict[label.item()]
             return sentence
 
@@ -42,7 +44,7 @@ class KsponSpeechVocabulary():
                 if label.item() == self.eos_id:
                     break
                 elif label.item() == self.blank_id:
-                  continue
+                    continue
                 sentence += self.id_dict[label.item()]
             sentences.append(sentence)
         return sentences
