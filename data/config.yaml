@@ -1,12 +1,12 @@
 #train dataset
-root : /dataset/content/gdrive/My Drive/Colab Notebooks
+root : /dataset/content/gdrive/My Drive/Colab Notebooks/dataset
 script_data_path: /content/gdrive/My Drive/Colab Notebooks/deep_study/transcripts.txt
 vocab_path: deep_study/data/aihub/aihub_labels.csv
 
 #input feature
 feature: melspectrogram
 n_mels : 80
-use_npy: False
+use_npy: True
 split_balance : 0.1
 
 #train
