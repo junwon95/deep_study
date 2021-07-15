@@ -16,7 +16,7 @@ use_cuda: True
 cer_every: 10000
 
 #model_save_load
-resume: True
+resume: False
 save_every: 1
 #inference
 inference: True
