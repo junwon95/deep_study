@@ -1,5 +1,5 @@
 #train dataset
-root : /content
+root : /content/dataset
 script_data_path: /content/transcripts.txt
 vocab_path: deep_study/data/aihub/aihub_labels.csv
 
