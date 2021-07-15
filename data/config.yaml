@@ -1,6 +1,6 @@
 #train dataset
-root : /dataset/content/gdrive/My Drive/Colab Notebooks/dataset
-script_data_path: /content/gdrive/My Drive/Colab Notebooks/deep_study/transcripts.txt
+root : /dataset/content
+script_data_path: /content/transcripts.txt
 vocab_path: deep_study/data/aihub/aihub_labels.csv
 
 #input feature
@@ -16,7 +16,7 @@ use_cuda: True
 cer_every: 10000
 
 #model_save_load
-resume: False
+resume: True
 save_every: 1
 #inference
 inference: True
