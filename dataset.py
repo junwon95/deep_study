@@ -39,7 +39,7 @@ class dataset(Dataset):
         return feature, script
 
     def _get_transcript(self):
-        with open(self.script_data_path, encoding='cp949') as f:
+        with open(self.script_data_path) as f:
             transcript = f.readlines()
         #transcript = [x for x in transcript if 'KsponSpeech_00' in x]
         transcript = self._split_dataset(transcript, balance=self.balance)
