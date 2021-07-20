@@ -11,7 +11,7 @@ split_balance : 0.1
 
 #train
 batch_size: 8
-epochs: 10
+epochs: 2
 use_cuda: True
 cer_every: 10000
 
@@ -21,7 +21,7 @@ save_every: 1
 #inference
 inference: True
 use_val_data: True
-weight_path: /content/gdrive/My Drive/Colab Notebooks/deep_study/pretrained.pt
+weight_path: /content/gdrive/My Drive/Colab Notebooks/inference/pretrained.pt
 
 #root : C:/SpeechRecognitionDataset/Dataset/AI_hub
 #script_data_path: C:/Users/junwonseo95/Desktop/deep_study/data/aihub/transcripts.txt
