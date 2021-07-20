@@ -218,7 +218,7 @@ def load_model(opt, model, vocab):
                                                   step_size_up=5, max_lr=0.0001,
                                                   mode='triangular', cycle_momentum=False)
     if opt['resume']:
-        root = './runs/'
+        root = 'deep_study/runs/'
         resume_path = get_last_checkpoint_dir(root) + 'best_model.pt'
         checkpoint = torch.load(resume_path)
         model.load_state_dict(checkpoint['state_dict'])
