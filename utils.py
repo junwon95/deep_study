@@ -181,7 +181,7 @@ def make_out():
 
 
 def make_dir(epoch):
-    root = './runs/'
+    root = 'deep_study/runs/'
     date_time = time.strftime('%Y_%m_%d_%H_%M_%S', time.localtime())
     dirname = root + f"{date_time}/"
     if epoch == 0:
@@ -192,14 +192,14 @@ def make_dir(epoch):
     return dirname
 
 
-def save_model(checkpoint, is_best, save_pretrined=True):
+def save_model(checkpoint, is_best, save_pretrained=True):
     dirname = make_dir(checkpoint['epoch'] - 1)
     f_path = "checkpoint.pt"
     pre_path = 'pretrained.pt'
     if os.path.exists(dirname + f_path):
         os.remove(dirname + f_path)
     torch.save(checkpoint, dirname + f_path)
-    if save_pretrined:
+    if save_pretrained:
         torch.save(checkpoint['state_dict'], dirname + pre_path)
 
     if is_best:
