@@ -169,7 +169,7 @@ def make_checkpoint(model, epoch, optimizer):
 
 
 def get_last_checkpoint_dir(root):
-    checkpoints_path = sorted(os.listdir(root), reverse=True)[-1]
+    checkpoints_path = sorted(os.listdir(root), reverse=True)[0]
     return os.path.join(root, checkpoints_path) + '/'
 
 
@@ -181,14 +181,16 @@ def make_out():
 
 
 def make_dir(epoch):
-    root = 'deep_study/runs/'
+    root = 'gdrive/My Drive/Colab Notebooks/runs/'
     date_time = time.strftime('%Y_%m_%d_%H_%M_%S', time.localtime())
     dirname = root + f"{date_time}/"
-    if epoch == 0:
-        if os.path.exists(dirname) is False:
-            os.makedirs(dirname)
-    else:
-        dirname = get_last_checkpoint_dir(root)
+
+    os.makedirs(dirname)
+    # if epoch == 0:
+    #     if os.path.exists(dirname) is False:
+    #         os.makedirs(dirname)
+    # else:
+    #     dirname = get_last_checkpoint_dir(root)
     return dirname
 
 
@@ -218,7 +220,7 @@ def load_model(opt, model, vocab):
                                                   step_size_up=5, max_lr=0.0001,
                                                   mode='triangular', cycle_momentum=False)
     if opt['resume']:
-        root = 'deep_study/runs/'
+        root = 'gdrive/My Drive/Colab Notebooks/runs'
         resume_path = get_last_checkpoint_dir(root) + 'best_model.pt'
         checkpoint = torch.load(resume_path)
         model.load_state_dict(checkpoint['state_dict'])
